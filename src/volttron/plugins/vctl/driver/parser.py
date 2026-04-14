@@ -13,12 +13,11 @@ from pprint import pprint
 try:
     distribution('volttron-core')
     from volttron.client.commands.connection import ControlConnection
-    from volttron.client.logs import AgentFormatter
     from volttron.utils import parse_json_config, ClientContext as cc
     connection = ControlConnection(cc.get_address(), peer='platform.driver')
 except PackageNotFoundError:
     from volttron.platform import get_address
-    from volttron.platform.agent.utils import parse_json_config, AgentFormatter
+    from volttron.platform.agent.utils import parse_json_config
     from volttron.platform.control.control_connection import ControlConnection
     from volttron.platform.vip.agent.utils import build_agent
     connection = ControlConnection(get_address(), peer='platform.driver')

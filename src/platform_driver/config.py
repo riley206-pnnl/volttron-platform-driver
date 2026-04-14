@@ -29,7 +29,7 @@ from typing import Annotated
 
 from volttron.driver.base.config import empty_str_is
 
-_log = logging.getLogger()
+_log = logging.getLogger(__name__)
 
 class GroupConfig(BaseModel):
     model_config = ConfigDict(validate_assignment=True, populate_by_name=True)
